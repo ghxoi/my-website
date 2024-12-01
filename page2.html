@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3d8e9; /* สีชมพูอ่อน */
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff4747; /* สีแดง */
+            font-size: 60px;
+            animation: fadeIn 3s;
+        }
+
+        p {
+            font-size: 24px;
+            color: #333333;
+            margin-top: 20px;
+            animation: fadeIn 3s;
+        }
+
+        .back-btn, .next-btn {
+            font-size: 40px;
+            color: #e35383; /* สีแดง */
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeIn 3s;
+        }
+
+        .back-btn:hover, .next-btn:hover {
+            color: #e9376c; /* สีแดงเข้มเมื่อชี้เมาส์ */
+        }
+
+        /* เพิ่มการตั้งค่าให้กับรูปภาพ */
+        .image-container {
+            margin-top: 30px;
+        }
+
+        img {
+            width: 200px; /* ขนาดที่ต้องการ */
+            height: auto;
+            margin: 10px;
+            animation: fadeIn 3s;
+        }
+
+        .back-btn {
+            margin-top: 100px; /* ระยะห่างจากด้านบน */
+        }
+
+        .next-btn {
+            margin-top: 100px; /* ระยะห่างจากด้านบน */
+            margin-left: 200px; /* ระยะห่างจากปุ่ม Back */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ผมจับสลากได้พี่เองครับ555555</h1>
+   
+    <!-- แสดงรูปภาพ -->
+    <div class="image-container">
+        <img src="C:\Users\user\Downloads\462556611_940720424619116_6934237043024264265_n-removebg-preview.png" alt="รูปภาพที่ 1">
+        <img src="C:\Users\user\Downloads\462547402_1510550572985020_7226042144045800457_n-removebg-preview.png" alt="รูปภาพที่ 2">
+    </div>
+
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="index.html" class="back-btn">⬅ Back</a>
+
+    <!-- ปุ่ม Next ไปที่หน้า Page 3 -->
+    <a href="page3.html" class="next-btn">➡ Next</a>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วันคริสต์มาส</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #57c5f1; /* สีฟ้าอ่อน (Sky Blue) */
+            text-align: center;
+            padding: 180px;
+            position: relative;
+            margin: 0;
+        }
+
+        h1 {
+            color: #59bdd1;
+            font-size: 50px;
+            animation: fadeIn 2s ease-in-out; /* ปรับแอนิเมชัน */
+        }
+
+        p {
+            font-size: 48px;
+            color: #333;
+            margin-top: 48px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards; /* ปรับแอนิเมชัน */
+            animation-delay: 1s; /* เพิ่มดีเลย์เพื่อให้ข้อความปรากฏหลังจาก 1 วินาที */
+        }
+
+        .content {
+            background-color: #c0efff;
+            padding: 40px; /* เพิ่มความสูงของกรอบ */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards; /* ปรับแอนิเมชัน */
+        }
+
+        .next-page a {
+            font-size: 50px; /* ขนาดตัวอักษรลูกศร */
+            color: #59bdd1; /* สีฟ้า */
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            animation: fadeIn 2s ease-in-out forwards;
+            font-weight: bold;
+        }
+
+        .next-page a span {
+            font-size: 24px; /* ขนาดของคำว่า "Next" */
+            margin-left: 10px;
+        }
+
+        .next-page a:hover {
+            color: #e276ac; /* สีชมพูเมื่อชี้เมาส์ */
+            transform: scale(1.2); /* ขยายขนาด */
+        }
+
+        /* หิมะตก */
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .snowflake {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snow 15s linear infinite;
+        }
+
+        @keyframes snow {
+            0% {
+                top: -10px;
+                left: 50%;
+                transform: scale(1);
+            }
+            100% {
+                top: 100%;
+                left: 50%;
+                transform: scale(0.5);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* การจัดเรียงภาพด้านล่าง */
+        .images {
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            bottom: 20px; /* ระยะห่างจากด้านล่าง */
+            left: 0;
+            right: 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .images img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- สร้างภาพหิมะตก -->
+    <div class="snowflakes">
+        <div class="snowflake" style="left: 10%; animation-duration: 12s;"></div>
+        <div class="snowflake" style="left: 20%; animation-duration: 14s;"></div>
+        <div class="snowflake" style="left: 30%; animation-duration: 16s;"></div>
+        <div class="snowflake" style="left: 40%; animation-duration: 18s;"></div>
+        <div class="snowflake" style="left: 50%; animation-duration: 12s;"></div>
+        <div class="snowflake" style="left: 60%; animation-duration: 15s;"></div>
+        <div class="snowflake" style="left: 70%; animation-duration: 17s;"></div>
+        <div class="snowflake" style="left: 80%; animation-duration: 13s;"></div>
+        <div class="snowflake" style="left: 90%; animation-duration: 10s;"></div>
+    </div>
+
+    <div class="content">
+        <h1>Hello Pimcream !!</h1>
+        <p>🐇🐰</p>
+        <div class="next-page">
+            <a href="page2.html">➡ <span>Next</span></a>
+        </div>
+    </div>
+
+    <!-- เพิ่มภาพ 3 ภาพ -->
+    <div class="images">
+        <img src="C:\Users\user\Downloads\400020533_17845557780097876_2635189462728410167_n.jpg" alt="Image 1">
+        <img src="C:\Users\user\Downloads\274570568_3012918152354271_1769289341061867682_n.jpg" alt="Image 2">
+        <img src="C:\Users\user\Downloads\319132070_3241111956201555_5472317986656857994_n.jpg" alt="Image 3">
+    </div>
+</body>
+</html>
