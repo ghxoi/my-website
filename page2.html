@@ -9,25 +9,25 @@
             font-family: 'Arial', sans-serif;
             background-color: #f3d8e9; /* สีชมพูอ่อน */
             text-align: center;
-            padding: 50px;
+            padding: 5vw; /* ใช้ vw เพื่อให้การ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
         }
 
         h1 {
             color: #ff4747; /* สีแดง */
-            font-size: 60px;
+            font-size: 8vw; /* ใช้ vw เพื่อให้ขนาดข้อความเหมาะสมกับหน้าจอ */
             animation: fadeIn 3s;
         }
 
         p {
-            font-size: 24px;
+            font-size: 5vw;
             color: #333333;
             margin-top: 20px;
             animation: fadeIn 3s;
         }
 
         .back-btn, .next-btn {
-            font-size: 40px;
+            font-size: 6vw; /* ปรับขนาดปุ่มให้พอดีกับหน้าจอ */
             color: #e35383; /* สีแดง */
             text-decoration: none;
             display: inline-block;
@@ -40,23 +40,26 @@
 
         /* เพิ่มการตั้งค่าให้กับรูปภาพ */
         .image-container {
-            margin-top: 30px;
+            margin-top: 10vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
         }
 
         img {
-            width: 200px; /* ขนาดที่ต้องการ */
+            width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
             height: auto;
-            margin: 10px;
+            margin: 2vw; /* ระยะห่างระหว่างรูป */
             animation: fadeIn 3s;
         }
 
         .back-btn {
-            margin-top: 100px; /* ระยะห่างจากด้านบน */
+            margin-top: 10vw; /* ระยะห่างจากด้านบน */
         }
 
         .next-btn {
-            margin-top: 100px; /* ระยะห่างจากด้านบน */
-            margin-left: 200px; /* ระยะห่างจากปุ่ม Back */
+            margin-top: 10vw; /* ระยะห่างจากด้านบน */
+            margin-left: 10vw; /* ระยะห่างจากปุ่ม Back */
         }
 
         @keyframes fadeIn {
@@ -69,6 +72,25 @@
                 transform: translateY(0);
             }
         }
+
+        /* Media Queries สำหรับการแสดงผลบนมือถือ */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 10vw; /* ขนาดข้อความของ h1 สำหรับโทรศัพท์ */
+            }
+
+            .back-btn, .next-btn {
+                font-size: 8vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
+            }
+
+            .image-container {
+                margin-top: 10vw;
+            }
+
+            img {
+                width: 45vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอมือถือ */
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,7 +99,7 @@
     <!-- แสดงรูปภาพ -->
     <div class="image-container">
         <img src="462556611_940720424619116_6934237043024264265_n-removebg-preview.png" alt="รูปภาพที่ 1">
-        <img src="C:\Users\user\Downloads\462547402_1510550572985020_7226042144045800457_n-removebg-preview.png" alt="รูปภาพที่ 2">
+        <img src="462547402_1510550572985020_7226042144045800457_n-removebg-preview.png" alt="รูปภาพที่ 2">
     </div>
 
     <!-- ปุ่มย้อนกลับ -->
