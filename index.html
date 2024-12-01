@@ -9,21 +9,21 @@
             font-family: 'Arial', sans-serif;
             background-color: #57c5f1; /* สีฟ้าอ่อน (Sky Blue) */
             text-align: center;
-            padding: 180px;
+            padding: 5vw;
             position: relative;
             margin: 0;
         }
 
         h1 {
             color: #59bdd1;
-            font-size: 50px;
+            font-size: 8vw;
             animation: fadeIn 2s ease-in-out; /* ปรับแอนิเมชัน */
         }
 
         p {
-            font-size: 48px;
+            font-size: 12vw;
             color: #333;
-            margin-top: 48px;
+            margin-top: 5vw;
             opacity: 0;
             animation: fadeIn 2s ease-in-out forwards; /* ปรับแอนิเมชัน */
             animation-delay: 1s; /* เพิ่มดีเลย์เพื่อให้ข้อความปรากฏหลังจาก 1 วินาที */
@@ -31,7 +31,7 @@
 
         .content {
             background-color: #c0efff;
-            padding: 40px; /* เพิ่มความสูงของกรอบ */
+            padding: 10vw; /* ปรับความสูงของกรอบ */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
@@ -43,17 +43,17 @@
         }
 
         .next-page a {
-            font-size: 50px; /* ขนาดตัวอักษรลูกศร */
+            font-size: 8vw; /* ขนาดตัวอักษรลูกศร */
             color: #59bdd1; /* สีฟ้า */
             text-decoration: none;
-            margin-top: 20px;
+            margin-top: 5vw;
             display: inline-block;
             animation: fadeIn 2s ease-in-out forwards;
             font-weight: bold;
         }
 
         .next-page a span {
-            font-size: 24px; /* ขนาดของคำว่า "Next" */
+            font-size: 4vw; /* ขนาดของคำว่า "Next" */
             margin-left: 10px;
         }
 
@@ -110,7 +110,7 @@
             display: flex;
             justify-content: space-around;
             position: absolute;
-            bottom: 20px; /* ระยะห่างจากด้านล่าง */
+            bottom: 5vw; /* ระยะห่างจากด้านล่าง */
             left: 0;
             right: 0;
             opacity: 0;
@@ -118,11 +118,39 @@
         }
 
         .images img {
-            width: 150px;
-            height: 150px;
+            width: 20vw;
+            height: 20vw;
             border-radius: 100px;
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Media Queries สำหรับโทรศัพท์มือถือ */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 12vw;
+            }
+
+            p {
+                font-size: 15vw;
+            }
+
+            .content {
+                padding: 5vw;
+            }
+
+            .next-page a {
+                font-size: 12vw;
+            }
+
+            .next-page a span {
+                font-size: 5vw;
+            }
+
+            .images img {
+                width: 25vw;
+                height: 25vw;
+            }
         }
     </style>
 </head>
