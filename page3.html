@@ -30,6 +30,7 @@
         .image-container {
             margin-top: 10vw;
             text-align: center; /* จัดตำแหน่งให้รูปอยู่กลาง */
+            position: relative;
         }
 
         img {
@@ -122,6 +123,26 @@
                 font-size: 5vw; /* ปรับขนาดข้อความใน paragraph */
             }
         }
+
+        /* ไอคอนเล่นเสียง */
+        .audio-btn {
+            position: absolute;
+            bottom: 10%; /* กำหนดตำแหน่งให้ไอคอนอยู่บนรูปภาพ */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 6vw; /* ปรับขนาดให้เหมาะสม */
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s;
+        }
+
+        .audio-btn:hover {
+            color: #ffcc00;
+        }
     </style>
 </head>
 <body>
@@ -152,6 +173,9 @@
     <!-- แสดงรูปภาพ -->
     <div class="image-container">
         <img src="Screenshot 2024-12-01 144045.jpg" alt="รูปภาพที่ 1"> <!-- เปลี่ยนเป็นเส้นทางของรูปภาพที่คุณต้องการ -->
+        
+        <!-- ปุ่มเล่นเพลง -->
+        <button class="audio-btn" onclick="toggleAudio()">🔊</button>
     </div>
 
     <!-- เพิ่มข้อความ -->
@@ -160,20 +184,23 @@
     <!-- ปุ่มย้อนกลับ -->
     <a href="index.html" class="back-btn">⬅ Back</a>
 
-    <!-- เพิ่มเพลง (เล่นอัตโนมัติและไม่แสดงไอคอน) -->
-    <audio id="background-music" autoplay loop>
-        <source src="468580090_9171210946245374_7412023809507368888_n.mp3" type="audio/mp3">
+    <!-- เพิ่มเพลง -->
+    <audio id="background-music" loop>
+        <source src="the first snow.mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- JavaScript เพื่อให้เพลงเล่นอัตโนมัติหลังจากหน้าโหลด -->
+    <!-- JavaScript สำหรับการเล่นเพลง -->
     <script>
-        window.addEventListener('load', function() {
-            var audio = document.getElementById('background-music');
-            audio.play().catch(function(error) {
-                console.log('ไม่สามารถเล่นเพลงได้:', error);
-            });
-        });
+        var audio = document.getElementById('background-music');
+        
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
     </script>
 </body>
 </html>
