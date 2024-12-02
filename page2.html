@@ -11,6 +11,7 @@
             text-align: center;
             padding: 5vw; /* ใช้ vw เพื่อให้การ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
+            overflow: hidden; /* ป้องกันการเลื่อนหน้า */
         }
 
         h1 {
@@ -51,19 +52,20 @@
             width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
             height: auto;
             margin: 2vw; /* ระยะห่างระหว่างรูป */
-            animation: fadeIn 3s, moveLeftRight 3s infinite alternate; /* เรียกใช้ animation สำหรับการขยับไปมา */
+            position: absolute; /* ให้รูปภาพอยู่ในตำแหน่งที่สามารถเคลื่อนที่ได้ */
+            animation: moveLeftRight 1.5s ease-in-out infinite; /* เรียกใช้ animation สำหรับการขยับไปมา */
         }
 
-        /* สร้างการเคลื่อนไหวของรูปภาพจากซ้ายไปขวา */
+        /* สร้างการเคลื่อนไหวของรูปภาพแบบโยกไปมา */
         @keyframes moveLeftRight {
             0% {
-                transform: translateX(0); /* เริ่มต้นที่ตำแหน่งเริ่มต้น */
+                transform: translateX(-10px); /* ขยับไปทางซ้าย */
             }
             50% {
-                transform: translateX(20px); /* ขยับไปทางขวา */
+                transform: translateX(10px); /* ขยับไปทางขวา */
             }
             100% {
-                transform: translateX(0); /* กลับมาที่ตำแหน่งเริ่มต้น */
+                transform: translateX(-10px); /* กลับไปทางซ้าย */
             }
         }
 
