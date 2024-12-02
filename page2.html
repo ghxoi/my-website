@@ -9,51 +9,52 @@
             font-family: 'Arial', sans-serif;
             background-color: #f3d8e9; /* สีชมพูอ่อน */
             text-align: center;
-            padding: 5vw; /* ใช้ vw เพื่อให้การ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             height: 100vh; /* ให้เต็มหน้าจอ */
-            overflow: hidden; /* ป้องกันการเลื่อนหน้า */
+            overflow: hidden;
         }
 
         h1 {
             color: #ff4747; /* สีแดง */
-            font-size: 8vw; /* ใช้ vw เพื่อให้ขนาดข้อความเหมาะสมกับหน้าจอ */
+            font-size: 8vw; /* ขนาดตัวอักษรตามสัดส่วนของหน้าจอ */
             animation: fadeIn 3s;
-            margin-bottom: 2vw; /* เพิ่มระยะห่างระหว่างข้อความและรูป */
+            margin-top: 10vw; /* ระยะห่างจากขอบบน */
         }
 
         p {
             font-size: 5vw;
             color: #333333;
-            margin-top: 20px;
+            margin-top: 5vw;
             animation: fadeIn 3s;
         }
 
         .image-container {
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
-            margin-top: 5vw; /* เพิ่มระยะห่างจากข้อความ */
-            flex-grow: 1; /* ให้พื้นที่นี้ขยายได้ */
+            flex-wrap: wrap;
+            margin-top: 5vw;
+            flex-grow: 1;
+            align-items: center;
         }
 
         img {
-            width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
+            width: 40vw; /* ขนาดที่เหมาะสมสำหรับโทรศัพท์ */
             height: auto;
             margin: 2vw; /* ระยะห่างระหว่างรูป */
-            animation: moveLeftRight 1.5s ease-in-out infinite; /* เรียกใช้ animation สำหรับการขยับไปมา */
+            animation: moveLeftRight 1.5s ease-in-out infinite;
         }
 
         .back-btn, .next-btn {
-            font-size: 6vw; /* ปรับขนาดปุ่มให้พอดีกับหน้าจอ */
+            font-size: 8vw; /* ปรับขนาดปุ่มให้เหมาะสมกับโทรศัพท์ */
             color: #e35383; /* สีแดง */
             text-decoration: none;
             display: inline-block;
+            margin-top: 10vw;
             animation: fadeIn 3s;
-            margin-bottom: 5vw; /* เพิ่มระยะห่างจากขอบล่าง */
         }
 
         .back-btn:hover, .next-btn:hover {
@@ -84,24 +85,27 @@
             }
         }
 
-        /* Media Queries สำหรับการแสดงผลบนมือถือ */
+        /* Media Queries สำหรับการแสดงผลบนโทรศัพท์ */
         @media (max-width: 768px) {
             h1 {
-                font-size: 10vw; /* ขนาดข้อความของ h1 สำหรับโทรศัพท์ */
+                font-size: 10vw; /* ขนาดข้อความสำหรับโทรศัพท์ */
+            }
+
+            p {
+                font-size: 6vw; /* ขนาดข้อความสำหรับโทรศัพท์ */
             }
 
             .back-btn, .next-btn {
-                font-size: 8vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
+                font-size: 10vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
             }
 
             .image-container {
-                margin-top: 10vw;
+                margin-top: 8vw;
                 justify-content: center;
-                flex-wrap: wrap;
             }
 
             img {
-                width: 45vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอมือถือ */
+                width: 60vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอโทรศัพท์ */
             }
         }
     </style>
