@@ -31,7 +31,7 @@
 
         .content {
             background-color: #c0efff;
-            padding: 15vw 5vw 5vw; /* เพิ่มความยาวของพื้นที่สีฟ้าให้ยาวลงมา */
+            padding: 10vw; /* ปรับความสูงของกรอบ */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
@@ -108,19 +108,19 @@
         /* การจัดเรียงภาพด้านล่าง */
         .images {
             display: flex;
-            justify-content: space-between; /* จัดให้ภาพอยู่ห่างกัน */
-            position: absolute; /* ให้รูปอยู่ติดพื้น */
-            bottom: 10vw; /* ปรับให้รูปลงมาจากขอบล่างมากขึ้น */
+            justify-content: space-around;
+            position: fixed; /* ให้รูปอยู่ที่ขอบล่าง */
+            bottom: 0; /* เลื่อนลงมาที่ขอบล่าง */
             left: 0;
             right: 0;
-            padding: 0 5vw; /* เพิ่มช่องว่างข้างๆ รูป */
+            padding: 10px;
             z-index: 1; /* ให้อยู่ข้างบนเนื้อหา */
             animation: fadeIn 2s ease-in-out forwards;
         }
 
         .images img {
-            width: 20vw; /* ลดขนาดของรูปภาพ */
-            height: 20vw;
+            width: 25vw; /* ปรับขนาดภาพให้เหมาะสม */
+            height: 25vw;
             border-radius: 50%; /* ทำให้เป็นวงกลม */
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -137,7 +137,7 @@
             }
 
             .content {
-                padding: 15vw 5vw 5vw;
+                padding: 5vw;
             }
 
             .next-page a {
@@ -151,28 +151,6 @@
             .images img {
                 width: 30vw; /* ขยายขนาดภาพให้เหมาะสมกับหน้าจอโทรศัพท์ */
                 height: 30vw;
-            }
-        }
-
-        /* Media Queries สำหรับการแสดงผลในแนวนอน */
-        @media (orientation: landscape) {
-            .content {
-                padding: 15vw 5vw 5vw;
-            }
-
-            .next-page a {
-                font-size: 5vw;
-            }
-
-            .images {
-                flex-direction: row; /* ให้รูปภาพแสดงในแนวนอน */
-                justify-content: space-between;
-                padding: 5vw 2vw;
-            }
-
-            .images img {
-                width: 20vw; /* ลดขนาดภาพเมื่ออยู่ในโหมดแนวนอน */
-                height: 20vw;
             }
         }
     </style>
