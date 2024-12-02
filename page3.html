@@ -28,12 +28,14 @@
 
         .image-container {
             margin-top: 10vw;
+            text-align: center; /* จัดตำแหน่งให้รูปอยู่กลาง */
         }
 
         img {
             width: 80vw; /* ปรับขนาดภาพให้เหมาะสมกับหน้าจอมือถือ */
             height: auto;
-            margin: 5vw; /* เพิ่มระยะห่างระหว่างภาพ */
+            margin: 0 auto; /* ใช้ auto เพื่อให้ภาพอยู่ตรงกลาง */
+            display: block; /* ทำให้ภาพแสดงผลในรูปแบบบล็อกเพื่อให้อยู่กลาง */
             animation: fadeIn 3s;
         }
 
@@ -73,6 +75,7 @@
 
             .image-container {
                 margin-top: 10vw;
+                text-align: center;
             }
 
             img {
