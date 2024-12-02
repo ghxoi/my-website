@@ -44,22 +44,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
+            position: relative; /* ต้องใช้ position เพื่อให้รูปภาพสามารถเคลื่อนที่ได้ */
         }
 
         img {
             width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
             height: auto;
             margin: 2vw; /* ระยะห่างระหว่างรูป */
-            animation: fadeIn 3s;
+            animation: fadeIn 3s, moveLeftRight 3s infinite alternate; /* เรียกใช้ animation สำหรับการขยับไปมา */
         }
 
-        .back-btn {
-            margin-top: 10vw; /* ระยะห่างจากด้านบน */
-        }
-
-        .next-btn {
-            margin-top: 10vw; /* ระยะห่างจากด้านบน */
-            margin-left: 10vw; /* ระยะห่างจากปุ่ม Back */
+        /* สร้างการเคลื่อนไหวของรูปภาพจากซ้ายไปขวา */
+        @keyframes moveLeftRight {
+            0% {
+                transform: translateX(0); /* เริ่มต้นที่ตำแหน่งเริ่มต้น */
+            }
+            50% {
+                transform: translateX(20px); /* ขยับไปทางขวา */
+            }
+            100% {
+                transform: translateX(0); /* กลับมาที่ตำแหน่งเริ่มต้น */
+            }
         }
 
         @keyframes fadeIn {
