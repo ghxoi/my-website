@@ -153,6 +153,28 @@
                 height: 30vw;
             }
         }
+
+        /* Media Queries สำหรับการแสดงผลในแนวนอน */
+        @media (orientation: landscape) {
+            .content {
+                padding: 3vw;
+            }
+
+            .next-page a {
+                font-size: 5vw;
+            }
+
+            .images {
+                flex-direction: row; /* ให้รูปภาพแสดงในแนวนอน */
+                justify-content: space-between;
+                padding: 5vw 2vw;
+            }
+
+            .images img {
+                width: 20vw; /* ลดขนาดภาพเมื่ออยู่ในโหมดแนวนอน */
+                height: 20vw;
+            }
+        }
     </style>
 </head>
 <body>
