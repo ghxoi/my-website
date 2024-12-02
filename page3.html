@@ -7,21 +7,21 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e1f7d5; /* สีเขียวอ่อน */
+            background-color: #e1f7d5;
             text-align: center;
-            padding: 5vw; /* ใช้ vw เพื่อให้ padding ปรับตามขนาดหน้าจอ */
+            padding: 5vw;
             margin: 0;
-            position: relative; /* เพื่อให้หิมะตกอยู่บนเนื้อหา */
+            position: relative;
         }
 
         h1 {
-            color: #009e3daa; /* สีเขียว */
-            font-size: 5vw; /* ปรับขนาดตัวอักษรให้เหมาะสมกับหน้าจอ */
+            color: #009e3daa;
+            font-size: 5vw;
             animation: fadeIn 3s;
         }
 
         p {
-            font-size: 4vw; /* ใช้ขนาดฟอนต์ที่เหมาะสมกับโทรศัพท์ */
+            font-size: 4vw;
             color: #333333;
             margin-top: 5vw;
             animation: fadeIn 3s;
@@ -29,21 +29,21 @@
 
         .image-container {
             margin-top: 10vw;
-            text-align: center; /* จัดตำแหน่งให้รูปอยู่กลาง */
-            position: relative;
+            text-align: center;
+            position: relative; /* เพิ่มสำหรับตำแหน่งไอคอน */
         }
 
         img {
-            width: 80vw; /* ปรับขนาดภาพให้เหมาะสมกับหน้าจอมือถือ */
+            width: 80vw;
             height: auto;
-            margin: 0 auto; /* ใช้ auto เพื่อให้ภาพอยู่ตรงกลาง */
-            display: block; /* ทำให้ภาพแสดงผลในรูปแบบบล็อกเพื่อให้อยู่กลาง */
+            margin: 0 auto;
+            display: block;
             animation: fadeIn 3s;
         }
 
         .back-btn, .next-btn {
-            font-size: 8vw; /* ปรับขนาดปุ่มให้เหมาะสม */
-            color: #00a44a; /* สีเขียว */
+            font-size: 8vw;
+            color: #00a44a;
             text-decoration: none;
             display: inline-block;
             margin-top: 5vw;
@@ -51,10 +51,9 @@
         }
 
         .back-btn:hover, .next-btn:hover {
-            color: #008540; /* สีเขียวเข้มเมื่อชี้เมาส์ */
+            color: #008540;
         }
 
-        /* สร้างหิมะตก */
         .snowflakes {
             position: absolute;
             top: 0;
@@ -72,19 +71,19 @@
             border-radius: 50%;
             opacity: 0.8;
             animation: snow 10s linear infinite;
-            width: 15px;  /* ขนาดของหิมะ */
-            height: 15px; /* ขนาดของหิมะ */
+            width: 15px;
+            height: 15px;
         }
 
         @keyframes snow {
             0% {
                 top: -10px;
-                left: calc(100% * var(--left-position)); /* ให้หิมะตกจากตำแหน่งที่แตกต่างกัน */
+                left: calc(100% * var(--left-position));
                 transform: scale(1);
             }
             100% {
-                top: 100%; /* ให้หิมะตกมาจนถึงด้านล่าง */
-                left: calc(100% * var(--left-position)); /* ให้หิมะตกตามตำแหน่งเดิม */
+                top: 100%;
+                left: calc(100% * var(--left-position));
                 transform: scale(0.5);
             }
         }
@@ -100,14 +99,13 @@
             }
         }
 
-        /* Media Queries สำหรับการแสดงผลบนมือถือ */
         @media (max-width: 750px) {
             h1 {
-                font-size: 12vw; /* ขนาดข้อความของ h1 สำหรับโทรศัพท์ */
+                font-size: 12vw;
             }
 
             .back-btn, .next-btn {
-                font-size: 8vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
+                font-size: 8vw;
             }
 
             .image-container {
@@ -116,37 +114,16 @@
             }
 
             img {
-                width: 90vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอมือถือ */
+                width: 90vw;
             }
 
             p {
-                font-size: 5vw; /* ปรับขนาดข้อความใน paragraph */
+                font-size: 5vw;
             }
-        }
-
-        /* ไอคอนเล่นเสียง */
-        .audio-btn {
-            position: absolute;
-            bottom: 10%; /* กำหนดตำแหน่งให้ไอคอนอยู่บนรูปภาพ */
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 6vw; /* ปรับขนาดให้เหมาะสม */
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 3s;
-        }
-
-        .audio-btn:hover {
-            color: #ffcc00;
         }
     </style>
 </head>
 <body>
-    <!-- สร้างหิมะตก -->
     <div class="snowflakes">
         <div class="snowflake" style="left: 10%; animation-duration: 12s; --left-position: 0.1;"></div>
         <div class="snowflake" style="left: 20%; animation-duration: 13s; --left-position: 0.2;"></div>
@@ -157,50 +134,30 @@
         <div class="snowflake" style="left: 70%; animation-duration: 11s; --left-position: 0.7;"></div>
         <div class="snowflake" style="left: 80%; animation-duration: 17s; --left-position: 0.8;"></div>
         <div class="snowflake" style="left: 90%; animation-duration: 14s; --left-position: 0.9;"></div>
-        <div class="snowflake" style="left: 5%; animation-duration: 18s; --left-position: 0.05;"></div>
-        <div class="snowflake" style="left: 15%; animation-duration: 20s; --left-position: 0.15;"></div>
-        <div class="snowflake" style="left: 25%; animation-duration: 22s; --left-position: 0.25;"></div>
-        <div class="snowflake" style="left: 35%; animation-duration: 18s; --left-position: 0.35;"></div>
-        <div class="snowflake" style="left: 45%; animation-duration: 16s; --left-position: 0.45;"></div>
-        <div class="snowflake" style="left: 55%; animation-duration: 14s; --left-position: 0.55;"></div>
-        <div class="snowflake" style="left: 65%; animation-duration: 12s; --left-position: 0.65;"></div>
-        <div class="snowflake" style="left: 75%; animation-duration: 17s; --left-position: 0.75;"></div>
-        <div class="snowflake" style="left: 85%; animation-duration: 19s; --left-position: 0.85;"></div>
     </div>
 
     <h1>เมอรี่คิดตะมาดดด 🎄🎅</h1>
-   
-    <!-- แสดงรูปภาพ -->
+
     <div class="image-container">
-        <img src="Screenshot 2024-12-01 144045.jpg" alt="รูปภาพที่ 1"> <!-- เปลี่ยนเป็นเส้นทางของรูปภาพที่คุณต้องการ -->
-        
-        <!-- ปุ่มเล่นเพลง -->
-        <button class="audio-btn" onclick="toggleAudio()">🔊</button>
+        <img src="Screenshot 2024-12-01 144045.jpg" alt="รูปภาพที่ 1">
     </div>
 
-    <!-- เพิ่มข้อความ -->
-    <p>ของขวัญไม่รู้ว่าจะถูกใจรึเปล่า แต่ก็หวังว่าจะชอบมันนะ </p>
+    <p>ของขวัญไม่รู้ว่าจะถูกใจรึเปล่า แต่ก็หวังว่าจะชอบมันนะ</p>
 
-    <!-- ปุ่มย้อนกลับ -->
     <a href="index.html" class="back-btn">⬅ Back</a>
 
-    <!-- เพิ่มเพลง -->
-    <audio id="background-music" loop>
+    <!-- เพลง -->
+    <audio id="background-music" autoplay loop muted>
         <source src="the first snow.mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- JavaScript สำหรับการเล่นเพลง -->
+    <!-- JavaScript -->
     <script>
-        var audio = document.getElementById('background-music');
-        
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('background-music');
+            audio.muted = false; // เปิดเสียงเมื่อผู้ใช้คลิก
+        }, { once: true }); // ทำงานเพียงครั้งเดียว
     </script>
 </body>
 </html>
