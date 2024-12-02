@@ -11,6 +11,10 @@
             text-align: center;
             padding: 5vw; /* ใช้ vw เพื่อให้การ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh; /* ให้เต็มหน้าจอ */
             overflow: hidden; /* ป้องกันการเลื่อนหน้า */
         }
 
@@ -18,6 +22,7 @@
             color: #ff4747; /* สีแดง */
             font-size: 8vw; /* ใช้ vw เพื่อให้ขนาดข้อความเหมาะสมกับหน้าจอ */
             animation: fadeIn 3s;
+            margin-bottom: 2vw; /* เพิ่มระยะห่างระหว่างข้อความและรูป */
         }
 
         p {
@@ -27,33 +32,32 @@
             animation: fadeIn 3s;
         }
 
-        .back-btn, .next-btn {
-            font-size: 6vw; /* ปรับขนาดปุ่มให้พอดีกับหน้าจอ */
-            color: #e35383; /* สีแดง */
-            text-decoration: none;
-            display: inline-block;
-            animation: fadeIn 3s;
-        }
-
-        .back-btn:hover, .next-btn:hover {
-            color: #e9376c; /* สีแดงเข้มเมื่อชี้เมาส์ */
-        }
-
-        /* เพิ่มการตั้งค่าให้กับรูปภาพ */
         .image-container {
-            margin-top: 10vw;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
-            position: relative; /* ต้องใช้ position เพื่อให้รูปภาพสามารถเคลื่อนที่ได้ */
+            margin-top: 5vw; /* เพิ่มระยะห่างจากข้อความ */
+            flex-grow: 1; /* ให้พื้นที่นี้ขยายได้ */
         }
 
         img {
             width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
             height: auto;
             margin: 2vw; /* ระยะห่างระหว่างรูป */
-            position: absolute; /* ให้รูปภาพอยู่ในตำแหน่งที่สามารถเคลื่อนที่ได้ */
             animation: moveLeftRight 1.5s ease-in-out infinite; /* เรียกใช้ animation สำหรับการขยับไปมา */
+        }
+
+        .back-btn, .next-btn {
+            font-size: 6vw; /* ปรับขนาดปุ่มให้พอดีกับหน้าจอ */
+            color: #e35383; /* สีแดง */
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeIn 3s;
+            margin-bottom: 5vw; /* เพิ่มระยะห่างจากขอบล่าง */
+        }
+
+        .back-btn:hover, .next-btn:hover {
+            color: #e9376c; /* สีแดงเข้มเมื่อชี้เมาส์ */
         }
 
         /* สร้างการเคลื่อนไหวของรูปภาพแบบโยกไปมา */
@@ -92,6 +96,8 @@
 
             .image-container {
                 margin-top: 10vw;
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
             img {
