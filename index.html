@@ -12,6 +12,7 @@
             padding: 3vw;
             position: relative;
             margin: 0;
+            overflow: hidden; /* ห้ามการเลื่อนหน้าจอ */
         }
 
         h1 {
@@ -71,6 +72,7 @@
             bottom: 0;
             pointer-events: none;
             z-index: 0;
+            overflow: hidden;
         }
 
         .snowflake {
@@ -90,8 +92,8 @@
                 transform: scale(1);
             }
             100% {
-                top: 100%;
-                left: calc(100% * var(--left-position)); /* ให้หิมะตกต่อไปตามตำแหน่งเดิม */
+                top: 100%; /* ให้หิมะตกมาจนถึงด้านล่าง */
+                left: calc(100% * var(--left-position)); /* ให้หิมะตกตามตำแหน่งเดิม */
                 transform: scale(0.5);
             }
         }
@@ -192,8 +194,8 @@
     <!-- เพิ่มภาพ 3 ภาพ -->
     <div class="images">
         <img src="400020533_17845557780097876_2635189462728410167_n.jpg">
-        <img src="274570568_3012918152354271_1769289341061867682_n.jpg" alt="Image 2">
-        <img src="319132070_3241111956201555_5472317986656857994_n.jpg" alt="Image 3">
+        <img src="274570568_3012918152354271_1761945070363462749_n.jpg">
+        <img src="420074535_727111472169290_717133922297870759_n.jpg">
     </div>
 </body>
 </html>
