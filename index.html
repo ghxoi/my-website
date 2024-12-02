@@ -108,19 +108,19 @@
         /* การจัดเรียงภาพด้านล่าง */
         .images {
             display: flex;
-            justify-content: space-around;
-            position: fixed; /* ให้รูปอยู่ที่ขอบล่าง */
-            bottom: 0; /* เลื่อนลงมาที่ขอบล่าง */
+            justify-content: space-between; /* จัดให้ภาพอยู่ห่างกัน */
+            position: absolute; /* ให้รูปอยู่ติดพื้น */
+            bottom: 0; /* ยึดติดขอบล่าง */
             left: 0;
             right: 0;
-            padding: 10px;
+            padding: 0 5vw; /* เพิ่มช่องว่างข้างๆ รูป */
             z-index: 1; /* ให้อยู่ข้างบนเนื้อหา */
             animation: fadeIn 2s ease-in-out forwards;
         }
 
         .images img {
-            width: 25vw; /* ปรับขนาดภาพให้เหมาะสม */
-            height: 25vw;
+            width: 30vw; /* ปรับขนาดรูปให้เหมาะสม */
+            height: 30vw;
             border-radius: 50%; /* ทำให้เป็นวงกลม */
             object-fit: cover;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -149,8 +149,8 @@
             }
 
             .images img {
-                width: 30vw; /* ขยายขนาดภาพให้เหมาะสมกับหน้าจอโทรศัพท์ */
-                height: 30vw;
+                width: 35vw; /* ขยายขนาดภาพให้เหมาะสมกับหน้าจอโทรศัพท์ */
+                height: 35vw;
             }
         }
 
