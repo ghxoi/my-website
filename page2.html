@@ -44,6 +44,19 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
+            animation: shake 1.5s ease-in-out infinite; /* การเคลื่อนไหวโยกไปมา */
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(-10px);
+            }
         }
 
         img {
@@ -108,4 +121,4 @@
     <!-- ปุ่ม Next ไปที่หน้า Page 3 -->
     <a href="page3.html" class="next-btn">➡ Next</a>
 </body>
-</html> 
+</html>
