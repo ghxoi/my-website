@@ -11,6 +11,7 @@
             text-align: center;
             padding: 5vw; /* ใช้ vw เพื่อให้ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
+            position: relative; /* เพื่อให้หิมะตกอยู่บนเนื้อหา */
         }
 
         h1 {
@@ -52,6 +53,41 @@
             color: #008540; /* สีเขียวเข้มเมื่อชี้เมาส์ */
         }
 
+        /* สร้างหิมะตก */
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snow 10s linear infinite;
+            width: 15px;  /* ขนาดของหิมะ */
+            height: 15px; /* ขนาดของหิมะ */
+        }
+
+        @keyframes snow {
+            0% {
+                top: -10px;
+                left: calc(100% * var(--left-position)); /* ให้หิมะตกจากตำแหน่งที่แตกต่างกัน */
+                transform: scale(1);
+            }
+            100% {
+                top: 100%; /* ให้หิมะตกมาจนถึงด้านล่าง */
+                left: calc(100% * var(--left-position)); /* ให้หิมะตกตามตำแหน่งเดิม */
+                transform: scale(0.5);
+            }
+        }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -89,6 +125,28 @@
     </style>
 </head>
 <body>
+    <!-- สร้างหิมะตก -->
+    <div class="snowflakes">
+        <div class="snowflake" style="left: 10%; animation-duration: 12s; --left-position: 0.1;"></div>
+        <div class="snowflake" style="left: 20%; animation-duration: 13s; --left-position: 0.2;"></div>
+        <div class="snowflake" style="left: 30%; animation-duration: 14s; --left-position: 0.3;"></div>
+        <div class="snowflake" style="left: 40%; animation-duration: 15s; --left-position: 0.4;"></div>
+        <div class="snowflake" style="left: 50%; animation-duration: 12s; --left-position: 0.5;"></div>
+        <div class="snowflake" style="left: 60%; animation-duration: 16s; --left-position: 0.6;"></div>
+        <div class="snowflake" style="left: 70%; animation-duration: 11s; --left-position: 0.7;"></div>
+        <div class="snowflake" style="left: 80%; animation-duration: 17s; --left-position: 0.8;"></div>
+        <div class="snowflake" style="left: 90%; animation-duration: 14s; --left-position: 0.9;"></div>
+        <div class="snowflake" style="left: 5%; animation-duration: 18s; --left-position: 0.05;"></div>
+        <div class="snowflake" style="left: 15%; animation-duration: 20s; --left-position: 0.15;"></div>
+        <div class="snowflake" style="left: 25%; animation-duration: 22s; --left-position: 0.25;"></div>
+        <div class="snowflake" style="left: 35%; animation-duration: 18s; --left-position: 0.35;"></div>
+        <div class="snowflake" style="left: 45%; animation-duration: 16s; --left-position: 0.45;"></div>
+        <div class="snowflake" style="left: 55%; animation-duration: 14s; --left-position: 0.55;"></div>
+        <div class="snowflake" style="left: 65%; animation-duration: 12s; --left-position: 0.65;"></div>
+        <div class="snowflake" style="left: 75%; animation-duration: 17s; --left-position: 0.75;"></div>
+        <div class="snowflake" style="left: 85%; animation-duration: 19s; --left-position: 0.85;"></div>
+    </div>
+
     <h1>เมอรี่คิดตะมาดดด 🎄🎅</h1>
    
     <!-- แสดงรูปภาพ -->
