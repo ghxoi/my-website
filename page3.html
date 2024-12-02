@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เมอรี่คิดตะมาดดด</title>
+    <title>Page 3 - เมอรี่คิดตะมาดดด</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e1f7d5; /* สีเขียวอ่อน */
+            background-color: #e1f7d5;
             text-align: center;
             padding: 5vw;
             margin: 0;
@@ -15,16 +15,8 @@
         }
 
         h1 {
-            color: #009e3daa; /* สีเขียว */
+            color: #009e3daa;
             font-size: 5vw;
-            animation: fadeIn 3s;
-        }
-
-        h2 {
-            color: #666666; /* สีเทา */
-            font-size: 1vw;
-            margin-top: 3vw;
-            font-weight: normal; /* ใช้ฟอนต์แบบธรรมดา */
             animation: fadeIn 3s;
         }
 
@@ -38,6 +30,7 @@
         .image-container {
             margin-top: 10vw;
             text-align: center;
+            position: relative; /* เพิ่มสำหรับตำแหน่งไอคอน */
         }
 
         img {
@@ -48,7 +41,7 @@
             animation: fadeIn 3s;
         }
 
-        .back-btn {
+        .back-btn, .next-btn {
             font-size: 8vw;
             color: #00a44a;
             text-decoration: none;
@@ -57,8 +50,42 @@
             animation: fadeIn 3s;
         }
 
-        .back-btn:hover {
+        .back-btn:hover, .next-btn:hover {
             color: #008540;
+        }
+
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snow 10s linear infinite;
+            width: 15px;
+            height: 15px;
+        }
+
+        @keyframes snow {
+            0% {
+                top: -10px;
+                left: calc(100% * var(--left-position));
+                transform: scale(1);
+            }
+            100% {
+                top: 100%;
+                left: calc(100% * var(--left-position));
+                transform: scale(0.5);
+            }
         }
 
         @keyframes fadeIn {
@@ -71,33 +98,66 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 750px) {
+            h1 {
+                font-size: 12vw;
+            }
+
+            .back-btn, .next-btn {
+                font-size: 8vw;
+            }
+
+            .image-container {
+                margin-top: 10vw;
+                text-align: center;
+            }
+
+            img {
+                width: 90vw;
+            }
+
+            p {
+                font-size: 5vw;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>เมอรี่คิดตะมาดดด 🎄🎅</h1>
-    <h2>กดหน้าจอหนึ่งครั้ง พร้อมเปิดเสียง</h2> <!-- ข้อความเล็กๆ ใต้หัวข้อ -->
-
-    <div class="image-container">
-        <img src="Screenshot 2024-12-01 144045.jpg" alt="รูปภาพที่ 1">
+    <div class="snowflakes">
+        <div class="snowflake" style="left: 10%; animation-duration: 12s; --left-position: 0.1;"></div>
+        <div class="snowflake" style="left: 20%; animation-duration: 13s; --left-position: 0.2;"></div>
+        <div class="snowflake" style="left: 30%; animation-duration: 14s; --left-position: 0.3;"></div>
+        <div class="snowflake" style="left: 40%; animation-duration: 15s; --left-position: 0.4;"></div>
+        <div class="snowflake" style="left: 50%; animation-duration: 12s; --left-position: 0.5;"></div>
+        <div class="snowflake" style="left: 60%; animation-duration: 16s; --left-position: 0.6;"></div>
+        <div class="snowflake" style="left: 70%; animation-duration: 11s; --left-position: 0.7;"></div>
+        <div class="snowflake" style="left: 80%; animation-duration: 17s; --left-position: 0.8;"></div>
+        <div class="snowflake" style="left: 90%; animation-duration: 14s; --left-position: 0.9;"></div>
     </div>
 
-    <p>ของขวัญไม่รู้ว่าจะถูกใจรึเปล่า แต่ก็หวังว่าจะชอบมันนะ </p>
+    <h1>เมอรี่คิดตะมาดดด 🎄🎅</h1>
+
+    <div class="image-container">
+        <img src="465878325_597934956059163_2633027880975666990_n.jpg" alt="รูปภาพที่ 1">
+    </div>
+
+    <p>ของขวัญไม่รู้ว่าจะถูกใจรึเปล่า แต่ก็หวังว่าจะชอบมันนะ</p>
 
     <a href="index.html" class="back-btn">⬅ Back</a>
 
+    <!-- เพลง -->
     <audio id="background-music" autoplay loop muted>
         <source src="the first snow.mp3">
         Your browser does not support the audio element.
     </audio>
 
+    <!-- JavaScript -->
     <script>
-        window.addEventListener('load', function() {
+        document.addEventListener('click', function() {
             var audio = document.getElementById('background-music');
-            audio.muted = false; // เปิดเสียงเพลงเมื่อโหลดหน้า
-            audio.play().catch(function(error) {
-                console.log('ไม่สามารถเล่นเพลงได้:', error);
-            });
-        });
+            audio.muted = false; // เปิดเสียงเมื่อผู้ใช้คลิก
+        }, { once: true }); // ทำงานเพียงครั้งเดียว
     </script>
 </body>
 </html>
