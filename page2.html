@@ -9,51 +9,28 @@
             font-family: 'Arial', sans-serif;
             background-color: #f3d8e9; /* สีชมพูอ่อน */
             text-align: center;
+            padding: 5vw; /* ใช้ vw เพื่อให้การ padding ปรับตามขนาดหน้าจอ */
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh; /* ให้เต็มหน้าจอ */
-            overflow: hidden;
         }
 
         h1 {
             color: #ff4747; /* สีแดง */
-            font-size: 8vw; /* ขนาดตัวอักษรตามสัดส่วนของหน้าจอ */
+            font-size: 8vw; /* ใช้ vw เพื่อให้ขนาดข้อความเหมาะสมกับหน้าจอ */
             animation: fadeIn 3s;
-            margin-top: 10vw; /* ระยะห่างจากขอบบน */
         }
 
         p {
             font-size: 5vw;
             color: #333333;
-            margin-top: 5vw;
+            margin-top: 20px;
             animation: fadeIn 3s;
         }
 
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 5vw;
-            flex-grow: 1;
-            align-items: center;
-        }
-
-        img {
-            width: 20vw; /* ขนาดที่เหมาะสมสำหรับโทรศัพท์ */
-            height: auto;
-            margin: 2vw; /* ระยะห่างระหว่างรูป */
-            animation: moveLeftRight 1.5s ease-in-out infinite;
-        }
-
         .back-btn, .next-btn {
-            font-size: 8vw; /* ปรับขนาดปุ่มให้เหมาะสมกับโทรศัพท์ */
+            font-size: 6vw; /* ปรับขนาดปุ่มให้พอดีกับหน้าจอ */
             color: #e35383; /* สีแดง */
             text-decoration: none;
             display: inline-block;
-            margin-top: 10vw;
             animation: fadeIn 3s;
         }
 
@@ -61,17 +38,28 @@
             color: #e9376c; /* สีแดงเข้มเมื่อชี้เมาส์ */
         }
 
-        /* สร้างการเคลื่อนไหวของรูปภาพแบบโยกไปมา */
-        @keyframes moveLeftRight {
-            0% {
-                transform: translateX(-10px); /* ขยับไปทางซ้าย */
-            }
-            50% {
-                transform: translateX(10px); /* ขยับไปทางขวา */
-            }
-            100% {
-                transform: translateX(-10px); /* กลับไปทางซ้าย */
-            }
+        /* เพิ่มการตั้งค่าให้กับรูปภาพ */
+        .image-container {
+            margin-top: 10vw;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* รองรับการแสดงผลในรูปแบบที่ยืดหยุ่น */
+        }
+
+        img {
+            width: 40vw; /* ขนาดรูปภาพที่เหมาะสมสำหรับโทรศัพท์ */
+            height: auto;
+            margin: 2vw; /* ระยะห่างระหว่างรูป */
+            animation: fadeIn 3s;
+        }
+
+        .back-btn {
+            margin-top: 10vw; /* ระยะห่างจากด้านบน */
+        }
+
+        .next-btn {
+            margin-top: 10vw; /* ระยะห่างจากด้านบน */
+            margin-left: 10vw; /* ระยะห่างจากปุ่ม Back */
         }
 
         @keyframes fadeIn {
@@ -85,27 +73,22 @@
             }
         }
 
-        /* Media Queries สำหรับการแสดงผลบนโทรศัพท์ */
+        /* Media Queries สำหรับการแสดงผลบนมือถือ */
         @media (max-width: 768px) {
             h1 {
-                font-size: 10vw; /* ขนาดข้อความสำหรับโทรศัพท์ */
-            }
-
-            p {
-                font-size: 6vw; /* ขนาดข้อความสำหรับโทรศัพท์ */
+                font-size: 10vw; /* ขนาดข้อความของ h1 สำหรับโทรศัพท์ */
             }
 
             .back-btn, .next-btn {
-                font-size: 10vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
+                font-size: 8vw; /* ขนาดปุ่มสำหรับโทรศัพท์ */
             }
 
             .image-container {
-                margin-top: 8vw;
-                justify-content: center;
+                margin-top: 10vw;
             }
 
             img {
-                width: 60vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอโทรศัพท์ */
+                width: 45vw; /* ปรับขนาดรูปให้เหมาะสมกับหน้าจอมือถือ */
             }
         }
     </style>
@@ -125,4 +108,4 @@
     <!-- ปุ่ม Next ไปที่หน้า Page 3 -->
     <a href="page3.html" class="next-btn">➡ Next</a>
 </body>
-</html>
+</html> 
