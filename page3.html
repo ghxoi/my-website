@@ -161,9 +161,19 @@
     <a href="index.html" class="back-btn">⬅ Back</a>
 
     <!-- เพิ่มเพลง (เล่นอัตโนมัติและไม่แสดงไอคอน) -->
-    <audio autoplay loop>
+    <audio id="background-music" autoplay loop>
         <source src="the first snow.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- JavaScript เพื่อให้เพลงเล่นอัตโนมัติหลังจากหน้าโหลด -->
+    <script>
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('background-music');
+            audio.play().catch(function(error) {
+                console.log('ไม่สามารถเล่นเพลงได้:', error);
+            });
+        });
+    </script>
 </body>
 </html>
